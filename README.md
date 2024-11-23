@@ -2,8 +2,6 @@
 
 Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.rust-lang.org/).
 
-<!--- advent_readme_stars table --->
-
 <!--- benchmarking table --->
 
 ---
@@ -198,61 +196,6 @@ cargo clippy
 2. Create the file `<home_directory>/.adventofcode.session` and paste your session cookie into it. To retrieve the session cookie, press F12 anywhere on the Advent of Code website to open your browser developer tools. Look in _Cookies_ under the _Application_ or _Storage_ tab, and copy out the `session` cookie value. [^1]
 
 Once installed, you can use the [download command](#download-input--description-for-a-day), the read command, and automatically submit solutions via the [`--submit` flag](#submitting-solutions).
-
-### Automatically track ⭐️ progress in the readme
-
-This template includes [a Github action](https://github.com/k2bd/advent-readme-stars) that automatically updates the readme with your advent of code progress.
-
-To enable it, complete the following steps:
-
-#### 1. Create a private leaderboard
-
-Go to the leaderboard page of the year you want to track and click _Private Leaderboard_. If you have not created a leaderboard yet, create one by clicking _Create It_. Your leaderboard should be accessible under `https://adventofcode.com/{year}/leaderboard/private/view/{aoc_user_id}`.
-
-#### 2. Set repository secrets
-
-Go to the _Secrets_ tab in your repository settings and create the following secrets:
-
--   `AOC_USER_ID`: Go to [this page](https://adventofcode.com/settings) and copy your user id. It's the number behind the `#` symbol in the first name option. Example: `3031`.
--   `AOC_YEAR`: the year you want to track. Example: `2021`.
--   `AOC_SESSION`: an active session[^2] for the advent of code website. To get this, press F12 anywhere on the Advent of Code website to open your browser developer tools. Look in your Cookies under the Application or Storage tab, and copy out the `session` cookie.
-
-Go to the _Variables_ tab in your repository settings and create the following variable:
-
--   `AOC_ENABLED`: This variable controls whether the workflow is enabled. Set it to `true` to enable the progress tracker. After you complete AoC or no longer work on it, you can set this to `false` to disable the CI.
-
-✨ You can now run this action manually via the _Run workflow_ button on the workflow page. If you want the workflow to run automatically, uncomment the `schedule` section in the `readme-stars.yml` workflow file or add a `push` trigger.
-
-### Enable code formatting / clippy checks in the CI
-
-Uncomment the respective sections in the `ci.yml` workflow.
-
-### Use DHAT to profile heap allocations
-
-If you are not only interested in the runtime of your solution, but also its memory allocation profile, you can use the template's [DHAT](https://valgrind.org/docs/manual/dh-manual.html) integration to analyze it. In order to activate DHAT, call the `solve` command with the `--dhat` flag.
-
-```sh
-cargo solve 1 --dhat
-
-# output:
-#     Running `target/dhat/1`
-# dhat: Total:     276 bytes in 3 blocks
-# dhat: At t-gmax: 232 bytes in 2 blocks
-# dhat: At t-end:  0 bytes in 0 blocks
-# dhat: The data has been saved to dhat-heap.json, and is viewable with dhat/dh_view.html
-# Part 1: 9001 (4.1ms)
-```
-
-The command will output some basic stats to the command-line and generate a `dhat-heap.json` report in the repo root directory.
-
-You can pass the report a tool like [dh-view](https://nnethercote.github.io/dh_view/dh_view.html) to view a detailed breakdown of heap allocations.
-
-### Use VS Code to debug your code
-
-1.  Install [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) and [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb).
-2.  Set breakpoints in your code. [^3]
-3.  Click _Debug_ next to the unit test or the _main_ function. [^4]
-4.  The debugger will halt your program at the specific line and allow you to inspect the local stack. [^5]
 
 ## Useful crates
 
