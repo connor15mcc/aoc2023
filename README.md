@@ -1,6 +1,4 @@
-<img src="./.assets/christmas_ferris.png" width="164">
-
-# 🎄 Advent of Code {year}
+# 🎄 Advent of Code 2023
 
 Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.rust-lang.org/).
 
@@ -9,27 +7,6 @@ Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.
 <!--- benchmarking table --->
 
 ---
-
-## Template setup
-
-This template supports all major OS (macOS, Linux, Windows).
-
-###  📝 Create your repository
-
-1.  Open [the template repository](https://github.com/fspoettel/advent-of-code-rust) on Github.
-2.  Click [Use this template](https://github.com/fspoettel/advent-of-code-rust/generate) and create your repository.
-3.  Clone your repository to your computer.
-4.  If you are solving a previous year's advent of code, change the `AOC_YEAR` variable in `.cargo/config.toml` to reflect the year you are solving.
-
-### 💻 Setup rust
-
-1.  Install the [Rust toolchain](https://www.rust-lang.org/tools/install).
-2.  (recommended) Install the [rust-analyzer](https://rust-analyzer.github.io/manual.html) extension for your code editor.
-3.  (optional) Install a native debugger. If you are using VS Code, [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) is a good option.
-
----
-
-✨ You can start solving puzzles now! Head to the [Usage section](#usage) to see how to use this template. If you like, you can configure [some optional features](#optional-template-features).
 
 ## Usage
 
@@ -56,7 +33,7 @@ Every [solution](https://github.com/fspoettel/advent-of-code-rust/blob/main/src/
 
 ### ➡️ Download input for a day
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > This requires [installing the aoc-cli crate](#configure-aoc-cli-integration).
 
 You can automatically download puzzle input and description by either appending the `--download` flag to `scaffold` (e.g. `cargo scaffold 4 --download`) or with the separate `download` command:
@@ -135,9 +112,9 @@ The `cargo time` command allows you to benchmark your code and store timings in 
 
 `cargo time` has three modes of execution:
 
- 1. `cargo time` without arguments incrementally benches solutions that do not have been stored in the readme yet and skips the rest.
- 2. `cargo time <day>` benches a single solution.
- 3. `cargo time --all` benches all solutions.
+1.  `cargo time` without arguments incrementally benches solutions that do not have been stored in the readme yet and skips the rest.
+2.  `cargo time <day>` benches a single solution.
+3.  `cargo time --all` benches all solutions.
 
 By default, `cargo time` does not write to the readme. In order to do so, append the `--store` flag: `cargo time --store`.
 
@@ -173,9 +150,9 @@ cargo read <day>
 
 During december, the `today` shorthand command can be used to:
 
- - scaffold a solution for the current day
- - download its input
- - and read the puzzle
+-   scaffold a solution for the current day
+-   download its input
+-   and read the puzzle
 
 in one go.
 
@@ -289,16 +266,3 @@ Do you have aoc-specific crate recommendations? [Share them!](https://github.com
 ## Common pitfalls
 
 -   **Integer overflows:** This template uses 32-bit integers by default because it is generally faster - for example when packed in large arrays or structs - than using 64-bit integers everywhere. For some problems, solutions for real input might exceed 32-bit integer space. While this is checked and panics in `debug` mode, integers [wrap](https://doc.rust-lang.org/book/ch03-02-data-types.html#integer-overflow) in `release` mode, leading to wrong output when running your solution.
-
-## Footnotes
-
-[^1]: The session cookie might expire after a while (~1 month) which causes the downloads to fail. To fix this issue, refresh the `.adventofcode.session` file.
-[^2]: The session cookie might expire after a while (~1 month) which causes the automated workflow to fail. To fix this issue, refresh the AOC_SESSION secret.
-[^3]:
-    <img src="https://user-images.githubusercontent.com/1682504/198838369-453dc22c-c645-4803-afe0-fc50d5a3f00c.png" alt="Set a breakpoint" width="450" />
-
-[^4]:
-    <img alt="Run debugger" src="https://user-images.githubusercontent.com/1682504/198838372-c89369f6-0d05-462e-a4c7-8cd97b0912e6.png" width="450" />
-
-[^5]:
-    <img alt="Inspect debugger state" src="https://user-images.githubusercontent.com/1682504/198838373-36df6996-23bf-4757-9335-0bc4c1db0276.png" width="450" />
